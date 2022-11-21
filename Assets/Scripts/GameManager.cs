@@ -20,8 +20,25 @@ public class GameManager : MonoBehaviour
         while(true){
             float waitTime = Random.Range(0.5f, 2f);
 
+            //wait a bit
             yield return new WaitForSeconds(waitTime);
-            GameObject newObstacle = Instantiate(obstacle, spawnPoint.position, Quaternion.identity);
+
+            //spawn a new obstacle
+            Vector3 spawnPos = spawnPoint.position;
+
+            int shouldMoveUp = Random.Range(0, 2);
+
+            if(shouldMoveUp > 0)
+            {
+                //move it by 1 or don't
+                spawnPos.y += 1.5f;
+            }
+
+            //create the obstacle
+            GameObject newObstacle = Instantiate(
+                obstacle, 
+                spawnPos, 
+                Quaternion.identity);
             newObstacle.SetActive(true);
         }
     }
