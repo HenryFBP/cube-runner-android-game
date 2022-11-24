@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
             if(shouldMoveUp > 0)
             {
-                //move it by 1 or don't
+                //move it by a bit or don't
                 spawnPos.y += 1.5f;
             }
 
