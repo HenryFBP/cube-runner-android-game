@@ -18,7 +18,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        bool isMouseClicked = Input.GetMouseButtonDown(0);
+        bool isSpacePressed = Input.GetKeyDown("space");
+        bool isUpPressed = Input.GetKeyDown("up");
+        if (isMouseClicked||isSpacePressed||isUpPressed)
         {
             if (this.canJump)
             {
